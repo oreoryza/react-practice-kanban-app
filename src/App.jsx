@@ -8,7 +8,7 @@ import { DragDropContext, Droppable } from "react-beautiful-dnd";
 const App = () => {
   const [showModal, setShowModal] = useState(false);
   const sessions = ["backlog", "onProgress", "done"];
-  
+
   const data = sessions.reduce((acc, session) => {
     const { data: sessionData, deleteData } = useDb({ column: session });
     acc[session] = { data: sessionData, deleteData };
@@ -44,7 +44,7 @@ const App = () => {
       endDate: "",
       tag: "",
     });
-    toggleModal()
+    toggleModal();
   };
 
   const handleDelete = (session, id) => {
@@ -76,10 +76,17 @@ const App = () => {
     const newData = { ...data };
 
     // Remove the task from the source column
-    const [movedTask] = newData[source.droppableId].data.splice(source.index, 1);
-    
+    const [movedTask] = newData[source.droppableId].data.splice(
+      source.index,
+      1
+    );
+
     // Add the task to the destination column
-    newData[destination.droppableId].data.splice(destination.index, 0, movedTask);
+    newData[destination.droppableId].data.splice(
+      destination.index,
+      0,
+      movedTask
+    );
 
     // Update the state or however you manage your data
     // You might need to implement a way to set the new state here
@@ -88,11 +95,17 @@ const App = () => {
   return (
     <div>
       <Navbar onClick={toggleModal} />
-      <AddTaskModal input={input} showModal={showModal} onClick={toggleModal} onSubmit={handleSubmit} onChange={handleChange} />
+      <AddTaskModal
+        input={input}
+        showModal={showModal}
+        onClick={toggleModal}
+        onSubmit={handleSubmit}
+        onChange={handleChange}
+      />
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="p-4">
           <div className="flex flex-wrap">
-            {sessions.map(session => (
+            {sessions.map((session) => (
               <Droppable key={session} droppableId={session}>
                 {(provided) => (
                   <div
@@ -100,10 +113,10 @@ const App = () => {
                     {...provided.droppableProps}
                     className="flex-1"
                   >
-                    <KanbanColumn 
-                      data={data[session].data} 
-                      onClick={(id) => handleDelete(session, id)} 
-                      session={session} 
+                    <KanbanColumn
+                      data={data[session].data}
+                      onClick={(id) => handleDelete(session, id)}
+                      session={session}
                     />
                     {provided.placeholder}
                   </div>

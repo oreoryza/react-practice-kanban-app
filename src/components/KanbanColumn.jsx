@@ -15,12 +15,18 @@ function KanbanColumn({ session, data, onClick }) {
 
   return (
     <div className="flex-1 border p-4 m-2 rounded-lg min-h-screen">
-      <h3 className="text-xl font-bold mb-4 w-full border-b py-2">{sessionTitle()}</h3>
+      <h3 className="text-xl font-bold mb-4 w-full border-b py-2">
+        {sessionTitle()}
+      </h3>
       <div className="space-y-4">
         {data.map((task, index) => (
           <Draggable key={task.id} draggableId={task.id} index={index}>
             {(provided) => (
-              <div ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+              <div
+                ref={provided.innerRef}
+                {...provided.draggableProps}
+                {...provided.dragHandleProps}
+              >
                 <TaskCard
                   title={task.title}
                   description={task.description}

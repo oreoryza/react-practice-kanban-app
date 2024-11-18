@@ -1,7 +1,6 @@
 import React from "react";
 
 function AddTaskModal({ showModal, onClick, input, onChange, onSubmit }) {
-
   return (
     <>
       {showModal && (
@@ -64,9 +63,7 @@ function AddTaskModal({ showModal, onClick, input, onChange, onSubmit }) {
               <button onClick={onClick} className="btn">
                 Cancel
               </button>
-              <button className="btn btn-primary">
-                Save
-              </button>
+              <button className="btn btn-primary">Save</button>
             </div>
           </form>
         </div>
