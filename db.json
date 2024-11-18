@@ -10,12 +10,12 @@
       "column": "onProgress"
     },
     {
-      "id": "c06e",
-      "title": "q",
-      "description": "q",
-      "startDate": "2024-11-20",
-      "endDate": "2024-11-19",
-      "tag": "Testing"
+      "id": "8460",
+      "title": "Judul",
+      "description": "Deskripsi",
+      "startDate": "2024-11-18",
+      "endDate": "2024-11-21",
+      "tag": "Design"
     }
   ],
   "onProgress": [
@@ -27,33 +27,7 @@
       "end_date": "2024-10-15",
       "tag": "Development",
       "column": "onProgress"
-    },
-    {
-      "id": "c16e",
-      "title": "2",
-      "description": "2",
-      "startDate": "2024-11-20",
-      "endDate": "2024-11-19",
-      "tag": "Testing"
     }
   ],
-  "done": [
-    {
-      "id": "5",
-      "title": "Task 5",
-      "description": "This is task 5",
-      "start_date": "2024-10-10",
-      "end_date": "2024-10-15",
-      "tag": "Development",
-      "column": "onProgress"
-    },
-    {
-      "id": "c063",
-      "title": "6",
-      "description": "6",
-      "startDate": "2024-11-20",
-      "endDate": "2024-11-19",
-      "tag": "Testing"
-    }
-  ]
+  "done": []
 }

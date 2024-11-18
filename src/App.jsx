@@ -47,11 +47,6 @@ const App = () => {
     toggleModal()
   };
 
-  const handleFetch = (e) => {
-    e.preventDefault();
-    fetchData();
-  }
-
   const handleDelete = (session, id) => {
     data[session].deleteData(id);
   };
@@ -93,10 +88,10 @@ const App = () => {
   return (
     <div>
       <Navbar onClick={toggleModal} />
-      <AddTaskModal input={input} showModal={showModal} onClick={toggleModal} onSubmit={handleSubmit} onChange={handleChange} fetch={handleFetch} />
+      <AddTaskModal input={input} showModal={showModal} onClick={toggleModal} onSubmit={handleSubmit} onChange={handleChange} />
       <DragDropContext onDragEnd={onDragEnd}>
         <div className="p-4">
-          <div className="flex space-x-4">
+          <div className="flex flex-wrap">
             {sessions.map(session => (
               <Droppable key={session} droppableId={session}>
                 {(provided) => (
